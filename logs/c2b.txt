@@ -1,0 +1,31 @@
+{
+            "ConversationID": "AG_20200712_00007f9f9371766291b4",
+            "OriginatorCoversationID": "22024-3335761-1",
+            "ResponseDescription": "Accept the service request successfully."
+        }
+        {
+                    "requestId":"14116-4212369-1",
+                    "errorCode": "400.003.02",
+                    "errorMessage": "Bad Request - Invalid ResponseType"
+                }
+            {
+            "ConversationID": "AG_20200712_00006105213a3971dab9",
+            "OriginatorCoversationID": "22015-3342479-1",
+            "ResponseDescription": "Accept the service request successfully."
+        }
+        {
+            "ConversationID": "AG_20200712_0000443323fb1f9c0aaf",
+            "OriginatorCoversationID": "15797-10284603-1",
+            "ResponseDescription": "Accept the service request successfully."
+        }
+        {
+                    "requestId":"14120-4213882-1",
+                    "errorCode": "400.003.02",
+                    "errorMessage": "Bad Request - Invalid ResponseType"
+                }
+            {
+                    "requestId":"16505-469486-1",
+                    "errorCode": "400.003.02",
+                    "errorMessage": "Bad Request - Invalid ResponseType"
+                }
+            
