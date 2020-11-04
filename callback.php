@@ -1,7 +1,11 @@
 <?php
 $callBackResponse = file_get_contents('php://input');
 
-$logFile = 'CallBackResponse.txt';
+$txn = json_decode($callBackResponse);
+
+
+
+$logFile = 'response.txt';
 $log = fopen($logFile,"a");
 fwrite($log,$callBackResponse);
 fclose($log);
