@@ -1,7 +1,7 @@
 <?php
 //includes
 session_start();
-//header('Location: cb.php');
+//header('Location: registerToken.php');
 include_once('classes/Validation.class.php');
 include_once('classes/C2B.class.php');
 include_once('classes/LogResponse.class.php');
