@@ -30,7 +30,7 @@ class RegisterUrl extends DBConn{
 
     //'T_CONVERSATIONID', 'T_ORIGINATORCONVERSATIONID', 'TOKEN', 'USER_ID', 'TIMESTAMP', 'T_STATUS'
     function saveToke($ConversationID,$OriginatorCoversationID,$token,$userId,$ResponseDescription){
-        $val = $this->lazyInsert("m_token",
+        $val = $this->lazyInsert("token",
             array('T_CONVERSATIONID', 'T_ORIGINATORCONVERSATIONID', 'TOKEN', 'USER_ID', 'T_STATUS'),
             array($ConversationID,$OriginatorCoversationID,$token,$userId,$ResponseDescription));
         return $val;

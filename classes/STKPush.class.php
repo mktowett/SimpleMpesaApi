@@ -31,6 +31,9 @@ class STKPush extends DBConn{
         curl_setopt($curl, CURLOPT_POSTFIELDS, $data_string);
 
         $curl_response = curl_exec($curl);
+        $stepresponsevalue = @json_decode($curl_response, true);
+        $ResponseDescription = $stepresponsevalue{'ResponseDescription'};
         print_r($curl_response);
+        return $ResponseDescription;
     }
 }

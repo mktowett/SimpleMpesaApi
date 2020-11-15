@@ -29,9 +29,9 @@ class DBConn {
         
         $DB_DATABASE = 'valurjbi_teketeke';*/
         $DB_SERVER = 'localhost';
-        $DB_USERNAME = 'RaymondK';
-        $DB_PASSWORD = 'R@ym0ndK!p';
-        $DB_DATABASE = 'research_tool';
+        $DB_USERNAME = 'root';
+        $DB_PASSWORD = 'mivvyLNxAxxA';
+        $DB_DATABASE = 'test bench';
         //$DB_USERNAME = 'dav';
         //$DB_PASSWORD = '';
         $this->refDate = date('Y-m-d');

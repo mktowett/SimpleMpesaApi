@@ -10,25 +10,30 @@ $url='https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest';
 $PasswordKey='bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919';
 
 //goten from generateToken.php
-$token='64e34GLFsgkJQYIGJLvvENAQrUWW';
+$token= $_POST['token'];
 
 $curl = curl_init();
-$BusinessShortCode='174379';
+$BusinessShortCode= $_POST['businessShortCode'];
 
 //make variable
-$Timestamp='20180814085620';
-$TransactionType='CustomerPayBillOnline';
-$Amount='1';
-$PartyA='254721888560';
-$PartyB='174379';
-$PhoneNumber='254721888560';
+$Timestamp= $_POST['timestamp'];
+$TransactionType= $_POST['transactionType'];
+$Amount= $_POST['amount'];
+$PartyA= $_POST['partyA'];
+$PartyB= $_POST['partyB'];
+$PhoneNumber= $_POST['phoneNumber'];
+
+//constants
 $CallBackURL='http://www.nearfieldltd.com/mpesaApi/callback.php';
-$AccountReference='STK001';
+$AccountReference='UniPay';
 $TransactionDesc='UniPay';
 $Password=base64_encode($BusinessShortCode.$PasswordKey.$Timestamp);
-$logFile = 'logs/stkpush.txt';
+
+//$logFile = 'logs/stkpush.txt';
 
 $txn = $stkpush->initSTKPush($url,$Password,$token,$curl,$BusinessShortCode,$Timestamp,$TransactionType,
     $Amount,$PartyA,$PartyB,$PhoneNumber,$CallBackURL,$AccountReference,$TransactionDesc);
 
-$log->createLogFile($logFile,$txn);
+//$log->createLogFile($logFile,$txn);
+
+echo $txn;

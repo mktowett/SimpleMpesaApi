@@ -46,6 +46,7 @@ if ($ResponseDescription == "success"){
     $ConversationID = $stepresponsevalue{'ConversationID'};
     $OriginatorCoversationID = $stepresponsevalue{'OriginatorCoversationID'};
     $tokenDetails = $registration->saveToke($ConversationID,$OriginatorCoversationID,$access_token,$userId,$ResponseDescription);
+    //$tokenDetails = $registration->saveToke("conId","origId",$access_token,"12","SUCCESS");
 
     //handle db insertion
     if ($tokenDetails){
@@ -57,7 +58,7 @@ if ($ResponseDescription == "success"){
         $data['token'] = $access_token;
         $data['respcode'] = "01";
         $data['respdesc'] = "failed";
-        $data['tokenDetails'] = $curl_response;
+       //X $data['tokenDetails'] = $curl_response;
     }
 
 }else{
