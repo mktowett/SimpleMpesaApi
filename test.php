@@ -1,53 +1,14 @@
 <?php
-include_once('classes/RegisterUrl.class.php');
 
-$registration = new RegisterUrl();
-/*$jsonRep  = '{
-    "Body": {
-        "stkCallback": {
-            "MerchantRequestID": "22027-4988848-1",
-            "CheckoutRequestID": "ws_CO_120720201917095081",
-            "ResultCode": 0,
-            "ResultDesc": "The service request is processed successfully.",
-            "CallbackMetadata": {
-                "Item": [
-                    {
-                        "Name": "Amount",
-                        "Value": 2.00
-                    },
-                    {
-                        "Name": "MpesaReceiptNumber",
-                        "Value": "OGC7P6FFQP"
-                    },
-                    {
-                        "Name": "TransactionDate",
-                        "Value": 20200712191723
-                    },
-                    {
-                        "Name": "PhoneNumber",
-                        "Value": 254721888560
-                    }
-                ]
-            }
-        }
-    }
-}';
+$callbackJSONData ='{"Body":{"stkCallback":{"MerchantRequestID":"12666-11209806-1","CheckoutRequestID":"ws_CO_161120202242362544","ResultCode":0,"ResultDesc":"The service request is processed successfully.","CallbackMetadata":{"Item":[{"Name":"Amount","Value":1.00},{"Name":"MpesaReceiptNumber","Value":"OKG8KUW812"},{"Name":"Balance"},{"Name":"TransactionDate","Value":20201116223158},{"Name":"PhoneNumber","Value":254726773920}]}}}}';
 
-$data = json_decode($jsonRep);
+//$callbackData = json_encode($callbackJSONData);
+ $result = json_encode($callbackJSONData,true);
 
-//access top level valus of json
-$MerchantRequestID = $data->Body->stkCallback->CallbackMetadata->Item;
-$callbackArray = array();
-$callback = $data->Body->stkCallback->CallbackMetadata->Item;
-//access value of CallbackMetadata
-//$MerchantRequestID = $data->Body->stkCallback->Item[0];
-$result = json_encode($callback);*/
+echo json_decode();
+$CheckoutRequestID = $result->CheckoutRequestID;
+$ResultCode = $result->ResultCode;
+$ResultDesc = $result->ResultDesc;
 
 
-$tokenDetails = $registration->saveToke("vvvv","ihgfdsa","12345rtfghu765",
-    "12","S");
-
-$result = "INSERT INTO `m_token` (`T_ID`, `T_CONVERSATIONID`, `T_ORIGINATORCONVERSATIONID`, `TOKEN`, `USER_ID`, `TIMESTAMP`, `T_STATUS`) VALUES ('2', 'e456789uihgfdre546', '098765rfghji9876543', '12345r6tygfdew32123456tyghyu7yuhy654ed', '12', 'CURRENT_TIMESTAMP(6).000000', 'S')";
-
-var_dump($result);
-echo $result;
+//var_dump( $callbackData = json_decode($callbackJSONData));

@@ -24,7 +24,7 @@ $PartyB= $_POST['partyB'];
 $PhoneNumber= $_POST['phoneNumber'];
 
 //constants
-$CallBackURL='http://www.nearfieldltd.com/mpesaApi/callback.php';
+$CallBackURL='http://www.nearfieldltd.com/api/callback.php';
 $AccountReference='UniPay';
 $TransactionDesc='UniPay';
 $Password=base64_encode($BusinessShortCode.$PasswordKey.$Timestamp);
