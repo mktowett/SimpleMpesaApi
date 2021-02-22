@@ -8,7 +8,7 @@ $log = new LogResponse();
 $url='https://sandbox.safaricom.co.ke/mpesa/b2c/v1/paymentrequest';
 
 //this is gotten from tokengeneration.php
-$token='5FzkbgbQmQcNcZ2l6zrrQvjiHAkR';
+$token='HyCOuI5DHJA6ePjKFJY1ndIzc7wC';
 
 $curl = curl_init();
 $initiator='apitest446';

@@ -33,13 +33,15 @@ $callbackJSONData = '{
       }
    }
 }';
+
 $object = json_decode($callbackJSONData,true);
-$ResultCode = json_encode($object['Body']['stkCallback']['ResultCode']);
+$stkCallBack = json_encode($object['Body']['stkCallback']);
+$callBackData = json_decode($stkCallBack,true);
+//get result code
+$ResultCode = json_encode($stkCallBack['ResultCode']);
 
+//handle success result code
 if($ResultCode == 0){
-
-    $stkCallBack = json_encode($object['Body']['stkCallback']);
-    $callBackData = json_decode($stkCallBack,true);
 
     //access values in the stkCallback
     $MerchantRequestID = json_encode($callBackData['MerchantRequestID']);
@@ -56,6 +58,7 @@ if($ResultCode == 0){
     $TransactionDate = json_encode($data[3]['Value']);
     $PhoneNumber = json_encode($data[4]['Value']);
 
+    //echo our data
     echo "Amount: ".$Amount."\n";
     echo "MpesaReceiptNumber: ".$MpesaReceiptNumber."\n";
     echo "Balance: ".$Balance."\n";
@@ -65,6 +68,10 @@ if($ResultCode == 0){
     echo "CheckoutRequestID: ".$CheckoutRequestID."\n";
     echo "ResultDesc: ".$ResultDesc."\n";
 
-}else{
+    //store data in our database
+
+} else{
+    //handle failed response code
+    $ResultDesc = json_encode($callBackData['ResultDesc']);
     echo "Failed to complete transaction. Please try again later";
 }
