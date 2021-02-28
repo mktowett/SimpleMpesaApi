@@ -25,15 +25,16 @@ $PhoneNumber= $_POST['phoneNumber'];
 
 //constants
 $CallBackURL='http://www.nearfieldltd.com/api/callback.php';
+//$CallBackURL='http://gatesystem.rongaiws.com/api/callback.php';
 $AccountReference='Little Cash';
 $TransactionDesc='Little Cash';
 $Password=base64_encode($BusinessShortCode.$PasswordKey.$Timestamp);
 
-$logFile = 'logs/stkpush.txt';
+//$logFile = 'logs/stkpush.txt';
 
-/*$txn = $stkpush->initSTKPush($url,$Password,$token,$curl,$BusinessShortCode,$Timestamp,$TransactionType,
-    $Amount,$PartyA,$PartyB,$PhoneNumber,$CallBackURL,$AccountReference,$TransactionDesc);*/
+$txn = $stkpush->initSTKPush($url,$Password,$token,$curl,$BusinessShortCode,$Timestamp,$TransactionType,
+    $Amount,$PartyA,$PartyB,$PhoneNumber,$CallBackURL,$AccountReference,$TransactionDesc);
 
-$log->createLogFile($logFile,$txn);
+//$log->createLogFile($logFile,$txn);
 
 echo $txn;
