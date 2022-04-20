@@ -19,21 +19,11 @@ class DBConn {
     
 
     public function __construct() {
-       //'username' => 'valurjbi_teketeke',
-	//'password' => '!@#$%^&*()',
-     /*   $DB_SERVER = 'localhost';
-        $DB_USERNAME = 'valurjbi_teketeke';
-        $DB_PASSWORD = '!@#$%^&*()';
-        $DB_USERNAME = 'dav';
-        $DB_PASSWORD = '';
-        
-        $DB_DATABASE = 'valurjbi_teketeke';*/
+      
+
         $DB_SERVER = 'localhost';
         $DB_USERNAME = 'root';
-        $DB_PASSWORD = 'mivvyLNxAxxA';
-        $DB_DATABASE = 'test bench';
-        //$DB_USERNAME = 'dav';
-        //$DB_PASSWORD = '';
+        
         $this->refDate = date('Y-m-d');
         $this->samplestart = date('Y-m-d', strtotime("-1 month"));
         $this->sampleend = date('Y-m-d', strtotime("+1 day"));
